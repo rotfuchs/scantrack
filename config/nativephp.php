@@ -256,15 +256,15 @@ return [
 
     'permissions' => [
         'biometric' => false,
-        'camera' => false,
+        'camera' => 'ScanTrack needs camera access to scan QR codes and barcodes.',
         'microphone' => false,
         'microphone_background' => false,
         'push_notifications' => false,
         'location' => false,
-        'vibrate' => false,
+        'vibrate' => true,
         'storage_read' => false,
         'storage_write' => false,
-        'scanner' => false,
+        'scanner' => 'ScanTrack needs scanner access to read QR codes and barcodes.',
         'network_state' => true,
     ],
 
