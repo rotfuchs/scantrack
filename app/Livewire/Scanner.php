@@ -4,8 +4,9 @@ namespace App\Livewire;
 
 use App\Models\ScanHistory;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
+use Native\Mobile\Events\Scanner\CodeScanned;
 use Native\Mobile\Facades\Scanner as NativeScanner;
 
 #[Layout('layouts.app')]
@@ -24,7 +25,7 @@ class Scanner extends Component
         NativeScanner::scan();
     }
 
-    #[On('native:Scanner\BarcodeScanned')]
+    #[OnNative(CodeScanned::class)]
     public function onBarcodeScanned(array $barcode): void
     {
         $content = $barcode['rawValue'] ?? $barcode['value'] ?? '';
