@@ -26,24 +26,21 @@ class Scanner extends Component
     }
 
     #[OnNative(CodeScanned::class)]
-    public function onBarcodeScanned(array $barcode): void
+    public function onBarcodeScanned(string $data, string $format, ?string $id = null): void
     {
-        $content = $barcode['rawValue'] ?? $barcode['value'] ?? '';
-        $format = $barcode['format'] ?? null;
-
-        if (empty($content)) {
+        if (empty($data)) {
             return;
         }
 
-        $type = ScanHistory::detectType($content);
+        $type = ScanHistory::detectType($data);
 
         ScanHistory::create([
-            'content' => $content,
+            'content' => $data,
             'format' => $format,
             'type' => $type,
         ]);
 
-        $this->lastScannedContent = $content;
+        $this->lastScannedContent = $data;
         $this->lastScannedFormat = $format;
         $this->lastScannedType = $type;
         $this->showResult = true;
