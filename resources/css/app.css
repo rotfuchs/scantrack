@@ -9,3 +9,14 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+:root, body {
+    height: var(--app-height) !important;
+    max-height: var(--app-height) !important;
+}
+.nav-title div {
+    margin-top: var(--inset-top) !important;
+}
+.nav-bottom div {
+    margin-bottom: var(--inset-bottom) !important;
+}

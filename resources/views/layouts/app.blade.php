@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ $title ?? 'ScanTrack' }}</title>
@@ -13,12 +13,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="nativephp-safe-area bg-gray-50 dark:bg-gray-900 min-h-screen antialiased">
-    <div class="flex flex-col min-h-screen pb-20">
+<body class="nativephp-safe-area bg-gray-50 flex flex-col dark:bg-gray-900 antialiased">
+    <div class="grow flex flex-col pb-20">
         {{ $slot }}
     </div>
 
-    <nav class="fixed bottom-0 inset-x-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 safe-area-bottom">
+    <nav class="nav-bottom fixed bottom-0 inset-x-0 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 safe-area-bottom">
         <div class="flex justify-around items-center h-16">
             <a href="{{ route('scanner') }}"
                class="flex flex-col items-center justify-center w-full h-full {{ request()->routeIs('scanner') ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-500 dark:text-gray-400' }}">

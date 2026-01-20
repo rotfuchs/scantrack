@@ -1,6 +1,6 @@
 <div class="flex flex-col flex-1">
     <!-- Header -->
-    <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-4">
+    <header class="nav-title bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-4">
         <h1 class="text-xl font-semibold text-gray-900 dark:text-white text-center">ScanTrack</h1>
     </header>
 
